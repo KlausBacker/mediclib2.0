@@ -1,29 +1,30 @@
 <template>
   <div>
-    <h3>Doctor</h3>
+    <h3>Patient</h3>
     <crud-table
       endpoint="api/patient"
-      :columns="['firstName','lastName', 'numberSecSoc','action']"
+      :columns="['firstName','lastName', 'numberSecSoc', 'birthday','action']"
       :form-fields="{
-               first_name: '',
-               last_name:'',
+               firstName: '',
+               lastName:'',
+               birthday:'',
                numberSecSoc:''
            }"
     >
       <!-- your form input fields in this slot-->
       <template v-slot:input-fields="{formdata}">
-        <b-form-group id="input-group-name" label="First Name:" label-for="input-firstname">
+        <b-form-group id="input-group-name" label="First Name:" label-for="input-firstName">
           <b-form-input
-            id="input-firstname"
-            v-model="formdata.firstname"
+            id="input-firstName"
+            v-model="formdata.firstName"
             required
             placeholder="Enter first name"
           ></b-form-input>
         </b-form-group>
-        <b-form-group id="input-group-name" label="Last Name:" label-for="input-lastname">
+        <b-form-group id="input-group-name" label="Last Name:" label-for="input-lastName">
           <b-form-input
-            id="input-lastname"
-            v-model="formdata.lastname"
+            id="input-lastName"
+            v-model="formdata.lastName"
             required
             placeholder="Enter last name"
           ></b-form-input>

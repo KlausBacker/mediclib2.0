@@ -3,9 +3,10 @@
     <h3>Speciality</h3>
     <crud-table
       endpoint="api/medical-spec"
-      :columns="['name','action']"
+      :columns="['name', 'doctorList','action']"
       :form-fields="{
-               name: ''
+               name: '',
+               doctorList:[]
            }"
     >
       <!-- your form input fields in this slot-->

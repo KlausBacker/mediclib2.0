@@ -44,7 +44,7 @@
   </div>
 </template>
 <script>
-import UiNavigation from '@/layouts/UI/ui-navigation.vue'
+import UiNavigation from '@/layouts/UI/components/ui-navigation.vue'
 
 export default {
   name: 'ui-header',
