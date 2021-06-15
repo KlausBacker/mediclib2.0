@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UiHeader from '@/layouts/UI/ui-header'
+import UiHeader from '@/layouts/UI/components/ui-header'
 
 export default {
   name: 'ui-layout',

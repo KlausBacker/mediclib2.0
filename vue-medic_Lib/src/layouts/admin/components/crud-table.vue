@@ -60,7 +60,7 @@ export default {
     deleteItem (item) {
       const index = this.tableData.indexOf(item)
       confirm('Are you sure you want to delete this item?') && this.tableData.splice(index, 1)
-      axios.delete(this.endpoint + '/' + item.id)
+      axios.delete('http://localhost:8080/' + this.endpoint + '/' + item.id)
     },
     close () {
       this.modalShow = false
@@ -72,10 +72,10 @@ export default {
     save () {
       if (this.editedIndex > -1) {
         Object.assign(this.tableData[this.editedIndex], this.editedItem)
-        axios.put(this.endpoint + '/' + this.editedItem.id, this.editedItem)
+        axios.put('http://localhost:8080/' + this.endpoint + '/' + this.editedItem.id, this.editedItem)
       } else {
         this.tableData.push(this.editedItem)
-        axios.post(this.endpoint, this.editedItem)
+        axios.post('http://localhost:8080/' + this.endpoint, this.editedItem)
       }
       this.close()
     }
