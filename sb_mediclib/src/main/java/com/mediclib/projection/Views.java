@@ -18,4 +18,5 @@ public interface Views {
     public static interface MedSpe extends Common { }
 
     public static interface Appointment extends Common { }
+//    public static interface SickPatient extends Common { }
 }

@@ -1,6 +1,7 @@
 package com.mediclib.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.mediclib.projection.Views;
 
@@ -62,9 +63,22 @@ public class Patient {
     private Address adresse;
     // a remplacer plus tard par private Address address;
 
-    @OneToMany(mappedBy = "id.patient")
+    @ManyToMany
+    @JoinTable(
+            name ="patient_med_condition",
+            /*TABLE Patient*/
+            joinColumns = @JoinColumn(name= "patcon_patient_id", referencedColumnName = "pat_ID" ),
+            /*TABLE Medical Condition */
+            inverseJoinColumns = @JoinColumn(name = "patcon_medcon_id", referencedColumnName = "medco_id")
+    )
+    @JsonView(Views.PatientmedCondtion.class)
+    private List<MedCondition> diseases;
+
+//    alter table patient_med_condition change patcon_detection_date patcon_detection_date date null;
+
+    /*@OneToMany(mappedBy = "id.patient")
     @JsonView(Views.PatientExtended.class)
-    private List<PatMedCondition> sickPatients;
+    private List<PatMedCondition> sickPatients;*/
 
     public int getId() {
         return id;
@@ -138,11 +152,11 @@ public class Patient {
         this.adresse = patAddress;
     }
 
-    public List<PatMedCondition> getSickPatients() {
+ /*   public List<PatMedCondition> getSickPatients() {
         return sickPatients;
     }
 
     public void setSickPatients(List<PatMedCondition> sickPatients) {
         this.sickPatients = sickPatients;
-    }
+    }*/
 }

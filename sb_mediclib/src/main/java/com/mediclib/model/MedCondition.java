@@ -6,6 +6,7 @@ import com.mediclib.projection.Views;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -29,8 +30,9 @@ public class MedCondition {
     @JsonView(Views.MedCond.class)
     private MedSpeciality speciality;
 
-    @OneToMany(mappedBy = "id.disease")
-    private List<PatMedCondition> sickPatients;
+
+//    @OneToMany(mappedBy = "id.disease")
+//    private List<PatMedCondition> sickPatients;
 
     public int getId() {
         return id;
@@ -56,11 +58,11 @@ public class MedCondition {
         this.speciality = speciality;
     }
 
-    public List<PatMedCondition> getSickPatients() {
-        return sickPatients;
-    }
-
-    public void setSickPatients(List<PatMedCondition> sickPatients) {
-        this.sickPatients = sickPatients;
-    }
+//    public List<PatMedCondition> getSickPatients() {
+//        return sickPatients;
+//    }
+//
+//    public void setSickPatients(List<PatMedCondition> sickPatients) {
+//        this.sickPatients = sickPatients;
+//    }
 }

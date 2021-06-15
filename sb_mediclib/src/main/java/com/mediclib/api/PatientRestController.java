@@ -2,10 +2,8 @@ package com.mediclib.api;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.mediclib.exception.PatientNotvalidException;
-import com.mediclib.model.PatMedCondition;
 import com.mediclib.model.Patient;
 import com.mediclib.projection.Views;
-import com.mediclib.service.PatMedCondService;
 import com.mediclib.service.PatientService;
 import org.springframework.beans.BeanInfoFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +21,7 @@ public class PatientRestController {
 
     @Autowired
     private PatientService patServ;
-    @Autowired
-    private PatMedCondService patMedCondService;
+
 
     @GetMapping
     @JsonView(Views.Patient.class)
@@ -47,6 +44,7 @@ public class PatientRestController {
     }
     return this.patServ.addPatient(patient);
     }
+
 
     @PutMapping("/{id}")
     @JsonView(Views.PatientmedCondtion.class)

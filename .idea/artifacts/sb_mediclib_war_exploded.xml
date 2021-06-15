@@ -82,6 +82,7 @@
           <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" />
           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.7" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">
