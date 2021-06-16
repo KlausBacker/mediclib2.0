@@ -19,19 +19,16 @@
             placeholder="Enter condition name"
           ></b-form-input>
         </b-form-group>
-<!--        <b-form-group id="input-group-name" label="Speciality:" label-for="input-speciality">-->
-        <!--          <b-form-select-->
-        <!--            id="input-speciality"-->
-        <!--            v-model="formdata.speciality"-->
-        <!--            required-->
-        <!--            placeholder="Enter speciality name"-->
-        <!--          >-->
-        <!--            <b-form-select-option v-for="speciality in specialityList"  value={{speciality.id}}>-->
-        <!--              {{ speciality.name }}-->
-        <!--            </b-form-select-option>-->
-        <!--          </b-form-select>-->
-        <!--          <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>-->
-        <!--        </b-form-group>-->
+        <b-form-group id="input-group-name" label="Speciality:" label-for="input-speciality">
+          <b-form-select
+            id="input-speciality"
+            v-model="formdata.speciality"
+            :options="medpseSelectList"
+            required
+            placeholder="Enter speciality name"
+          />
+<!--          <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>-->
+        </b-form-group>
       </template>
     </crud-table>
   </div>
@@ -46,9 +43,19 @@ export default {
   name: 'condition-list',
   data () {
     return {
-      selected: null,
-      specialityList: [
-        { value: 'a', text: 'This is First option' }
+      sectors: [{ value: 1, text: 'sector 1' }, { value: 2, text: 'sector 2' }],
+      medpseSelectList: [
+        { value: { id: 1 }, text: 'Dermatology' },
+        { value: { id: 2 }, text: 'Cardiology' },
+        { value: { id: 3 }, text: 'Ophthalmology' },
+        { value: { id: 4 }, text: 'Urology' },
+        { value: { id: 5 }, text: 'Neurology' },
+        { value: { id: 6 }, text: 'Oncology' },
+        { value: { id: 7 }, text: 'Gynaecology' },
+        { value: { id: 8 }, text: 'Psychiatry' },
+        { value: { id: 9 }, text: 'Pulmonology' },
+        { value: { id: 10 }, text: 'Pediatrics' },
+        { value: { id: 11 }, text: 'Radiology' }
       ]
     }
   },

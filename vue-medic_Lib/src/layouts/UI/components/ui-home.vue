@@ -11,7 +11,7 @@
 </template>
 <script>
 import Carousel from './ui-home-carousel.vue'
-import AppointmentSearch from './ui-appointment-search-form.vue'
+import AppointmentSearch from './appointment/ui-appointment-search-form.vue'
 import Footer from './ui-footer.vue'
 
 export default {

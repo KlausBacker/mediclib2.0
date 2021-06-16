@@ -21,14 +21,14 @@ public class DoctorRestController {
     private DoctorService docServ;
 
     @GetMapping
-    @JsonView(Views.Doctor.class)
+    @JsonView(Views.DoctorMedSpeciality.class)
     public List<Doctor> findAll() {
 
         return docServ.findAll();
     }
 
     @GetMapping("/{id}")
-    @JsonView(Views.DoctorComplete.class)
+    @JsonView(Views.DoctorMedSpeciality.class)
     public Doctor findById(@PathVariable int id) {
 
         return this.docServ.findById(id);
@@ -36,7 +36,7 @@ public class DoctorRestController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    @JsonView(Views.DoctorComplete.class)
+    @JsonView(Views.DoctorMedSpeciality.class)
     public boolean add(@Valid @RequestBody Doctor doctor, BindingResult result) {
     if(result.hasErrors()) {
         return false;

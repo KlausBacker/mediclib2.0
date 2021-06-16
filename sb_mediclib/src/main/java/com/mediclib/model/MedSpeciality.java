@@ -25,7 +25,7 @@ public class MedSpeciality {
     private String name;
 
     @ManyToMany(mappedBy = "specialityList")
-    @JsonView(Views.MedSpe.class)
+    @JsonView(Views.MedSpeComplete.class)
     private List<Doctor> doctorList;
 
     public int getId() {

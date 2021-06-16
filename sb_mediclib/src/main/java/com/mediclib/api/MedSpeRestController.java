@@ -23,7 +23,7 @@ public class MedSpeRestController {
     private MedSpecialityService medSpeServ;
 
     @GetMapping
-    @JsonView(Views.MedSpe.class)
+    @JsonView(Views.MedSpeDoctor.class)
     public List<MedSpeciality> findAll() {
 
         return medSpeServ.findAll();
@@ -40,9 +40,9 @@ public class MedSpeRestController {
     @ResponseStatus(code = HttpStatus.CREATED)
     @JsonView(Views.MedSpe.class)
     public boolean add(@Valid @RequestBody MedSpeciality medSpeciality, BindingResult result) {
-    if(result.hasErrors()) {
-        return false;
-    }
+        if (result.hasErrors()) {
+            return false;
+        }
         this.medSpeServ.add(medSpeciality);
         return true;
     }

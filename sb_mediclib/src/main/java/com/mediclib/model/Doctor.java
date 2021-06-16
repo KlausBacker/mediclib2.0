@@ -32,7 +32,7 @@ public class Doctor {
 
     @Column(name = "doc_sector", length = 11, nullable = false)
     @NotNull
-    @JsonView(Views.Doctor.class)
+    @JsonView(Views.DoctorComplete.class)
     private int sector;
 
     @ManyToMany

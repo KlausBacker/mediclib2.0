@@ -38,6 +38,8 @@ export default {
       editedItem: this.formFields,
       modalShow: false,
       editedIndex: -1,
+      itemId: 0,
+      itemById: {},
       tableData: []
     }
   },
@@ -81,7 +83,12 @@ export default {
     }
   },
   created () {
-    axios('http://localhost:8080/' + this.endpoint).then(response => { this.tableData = response.data })
+    axios('http://localhost:8080/' + this.endpoint).then(response => {
+      this.tableData = response.data
+    })
+    // axios('http://localhost:8080/' + this.endpoint + '/' + this.itemID).then(response => {
+    //   this.itemById = response.data
+    // })
   }
 
 }

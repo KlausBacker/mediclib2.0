@@ -3,11 +3,12 @@
     <h3>Doctor</h3>
     <crud-table
       endpoint="api/doctor"
-      :columns="['firstName','lastName', 'sector','action']"
+      :columns="['firstName','lastName','specialityList', 'action']"
       :form-fields="{
                firstName: '',
                lastName:'',
-               sector:''
+               sector:'',
+               specialityList:[{}]
            }"
     >
       <!-- your form input fields in this slot-->
@@ -32,12 +33,22 @@
           <b-form-select
             id="input-sector"
             v-model="formdata.sector"
+            :options="sectors"
             required
             placeholder="Select sector">
-            <b-form-select-option value="1">Sector 1</b-form-select-option>
-            <b-form-select-option value="2">Sector 2</b-form-select-option>
           </b-form-select>
-          <div class="mt-3">Selected: <strong>{{ formdata.sector }}</strong></div>
+<!--          <div class="mt-3">Selected: <strong>{{ formdata.sector }}</strong></div>-->
+        </b-form-group>
+        <b-form-group id="input-group-specialityList" label="speciality(ies)" label-for="input-specialityList">
+          <b-form-select
+            multiple
+            id="input-specialityList"
+            v-model="formdata.specialityList"
+            :options="medpseSelectList"
+            required
+            placeholder="Select speciality(ies)">
+          </b-form-select>
+          <div class="mt-3">Selected: <strong>{{ formdata.specialityList }}</strong></div>
         </b-form-group>
 
       </template>
@@ -48,10 +59,44 @@
 
 <script>
 import CrudTable from '../crud-table.vue'
+import axios from 'axios'
 
 export default {
   components: { CrudTable },
-  name: 'doctor-list'
+  name: 'doctor-list',
+  data () {
+    return {
+      sectors: [{ value: 1, text: 'sector 1' }, { value: 2, text: 'sector 2' }],
+      medpseSelectList: [
+        { value: { id: 1 }, text: 'Dermatology' },
+        { value: { id: 2 }, text: 'Cardiology' },
+        { value: { id: 3 }, text: 'Ophthalmology' },
+        { value: { id: 4 }, text: 'Urology' },
+        { value: { id: 5 }, text: 'Neurology' },
+        { value: { id: 6 }, text: 'Oncology' },
+        { value: { id: 7 }, text: 'Gynaecology' },
+        { value: { id: 8 }, text: 'Psychiatry' },
+        { value: { id: 9 }, text: 'Pulmonology' },
+        { value: { id: 10 }, text: 'Pediatrics' },
+        { value: { id: 11 }, text: 'Radiology' }
+      ]
+    }
+  },
+
+  createdSpe () {
+    axios('http://localhost:8080/' + 'api/medical-spec').then(response => {
+      this.MedSpeList = response.data
+    })
+
+    this.MedSpeList.forEach((speciality) => {
+      const selectListOption = [{
+        value: speciality,
+        text: speciality.name
+      }]
+      this.medpseSelectList.push(selectListOption)
+    })
+  }
+
 }
 </script>
 <style scoped>
