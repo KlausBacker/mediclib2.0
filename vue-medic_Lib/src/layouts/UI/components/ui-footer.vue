@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style scoped>
-
+.footer{
+  padding-top: 20px;
+}
 </style>

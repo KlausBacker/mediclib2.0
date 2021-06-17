@@ -1,13 +1,13 @@
 <template>
-  <b-carousel
+  <b-carousel label-goto-slide="carousel"
     id="carousel-1"
     v-model="slide"
     :interval="4000"
     controls
     indicators
     background="#ababab"
-    img-width="1024"
-    img-height="480"
+    img-width="900"
+    img-height="320"
     style="text-shadow: 1px 1px 2px #333;"
     @sliding-start="onSlideStart"
     @sliding-end="onSlideEnd"
@@ -44,5 +44,8 @@ export default {
 </script>
 
 <style scoped>
+#carousel-1{
+  margin: 15px;
 
+}
 </style>
