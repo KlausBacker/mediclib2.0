@@ -24,6 +24,7 @@
       </b-form>
 
     </b-modal>
+
   </div>
 </template>
 
@@ -37,6 +38,7 @@ export default {
     return {
       editedItem: this.formFields,
       modalShow: false,
+
       editedIndex: -1,
       itemId: 0,
       itemById: {},
@@ -81,6 +83,7 @@ export default {
       }
       this.close()
     }
+
   },
   created () {
     axios('http://localhost:8080/' + this.endpoint).then(response => {

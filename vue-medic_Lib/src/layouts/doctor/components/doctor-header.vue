@@ -9,10 +9,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/">Ui</b-nav-item>
-            <b-nav-item to="doctor">Doctors</b-nav-item>
-            <b-nav-item to="speciality">Specialities</b-nav-item>
-            <b-nav-item to="condition">Conditions</b-nav-item>
-            <b-nav-item to="patient">Patients</b-nav-item>
+            <b-nav-item to="/admin">admin</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
@@ -32,9 +29,9 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <em>admin</em>
+                <em>doctor</em>
               </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item to="/profile">Profile</b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

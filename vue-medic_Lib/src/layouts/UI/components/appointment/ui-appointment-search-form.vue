@@ -2,11 +2,11 @@
   <b-container id="container" fluid>
     <b-form-group id="form" inline>
       <label class="sr-only align-content-center">research</label>
-      <b-form-select-option
+      <b-form-input
         id="inline-form-input-research"
         class="mb-4 mr-sm-4 mb-sm-0"
         placeholder="doctor, clinic, specialty..."
-      ></b-form-select-option>
+      ></b-form-input>
 
       <b-button variant="primary">Search</b-button>
       </b-form-group>

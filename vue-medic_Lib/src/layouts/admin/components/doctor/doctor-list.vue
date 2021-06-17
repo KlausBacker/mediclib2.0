@@ -3,12 +3,12 @@
     <h3>Doctor</h3>
     <crud-table
       endpoint="api/doctor"
-      :columns="['firstName','lastName','specialityList', 'action']"
+      :columns="['firstName','lastName','sector', 'action']"
       :form-fields="{
                firstName: '',
                lastName:'',
                sector:'',
-               specialityList:[{}]
+
            }"
     >
       <!-- your form input fields in this slot-->
@@ -38,17 +38,6 @@
             placeholder="Select sector">
           </b-form-select>
 <!--          <div class="mt-3">Selected: <strong>{{ formdata.sector }}</strong></div>-->
-        </b-form-group>
-        <b-form-group id="input-group-specialityList" label="speciality(ies)" label-for="input-specialityList">
-          <b-form-select
-            multiple
-            id="input-specialityList"
-            v-model="formdata.specialityList"
-            :options="medpseSelectList"
-            required
-            placeholder="Select speciality(ies)">
-          </b-form-select>
-          <div class="mt-3">Selected: <strong>{{ formdata.specialityList }}</strong></div>
         </b-form-group>
 
       </template>

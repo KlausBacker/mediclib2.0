@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-<admin-header/>
+<doctor-header/>
   </div>
 </template>
 

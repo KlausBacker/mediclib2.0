@@ -17,6 +17,10 @@ import ConditionList from '../layouts/admin/components/condition/condition-list.
 import ConditionForm from '../layouts/admin/components/condition/condition-form.vue'
 import PatientList from '../layouts/admin/components/patient/patient-list.vue'
 import PatientDetail from '../layouts/admin/components/patient/patient-detail.vue'
+// *******   Doctor layout components imports   *******
+import Doctorlayout from '../layouts/doctor/components/doctorLayout.vue'
+import DoctorDashboard from '../layouts/doctor/components/doctor-dashboard.vue'
+import DoctorProfile from '../layouts/doctor/components/doctor-profile.vue'
 
 Vue.use(VueRouter)
 
@@ -109,6 +113,22 @@ const routes = [
         path: '/patient-detail',
         name: 'PatientDetail',
         component: PatientDetail
+      }
+    ]
+  },
+  {
+    path: '/doctor-admin',
+    name: 'Doctor',
+    component: Doctorlayout,
+    children: [
+      {
+        path: '',
+        component: DoctorDashboard
+      },
+      {
+        path: '/profile/{id}',
+        name: 'Profile',
+        component: DoctorProfile
       }
     ]
   }
