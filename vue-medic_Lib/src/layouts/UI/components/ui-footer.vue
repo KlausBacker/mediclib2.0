@@ -1,4 +1,4 @@
-<template>
+<template v-slot:input-fields="{formdata}">
   <div class="footer ">
     <b-card
       overlay

@@ -26,6 +26,12 @@ public class DoctorRestController {
 
         return docServ.findAll();
     }
+    @GetMapping("/byspe")
+    @JsonView(Views.DoctorMedSpeciality.class)
+    public List<Doctor> findAllBySpe(int id) {
+
+        return docServ.findAllBySpe(id);
+    }
 
     @GetMapping("/{id}")
     @JsonView(Views.DoctorMedSpeciality.class)

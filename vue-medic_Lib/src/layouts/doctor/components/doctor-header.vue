@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand to="/admin">MedicLib Admin</b-navbar-brand>
+        <b-navbar-brand to="/admin">MedicLib Doctor</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -35,23 +35,22 @@
                 <em>admin</em>
               </template>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Dashboard</b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
       <!--    Navigation-->
-      <admin-navigation/>
+      <doctor-navigation/>
     </div>
   </div>
 </template>
 
 <script>
-import AdminNavigation from './admin-navigation'
+import DoctorNavigation from './doctor-navigation'
 export default {
-  name: 'admin-header',
-  components: { AdminNavigation }
+  name: 'doctor-header',
+  components: { DoctorNavigation }
 }
 </script>
 

@@ -14,6 +14,8 @@ public class MedSpecialityService {
     @Autowired
     private IMedSpecialityDao dao;
 
+
+
     public List<MedSpeciality> findAll() {
 
         return this.dao.findAll();
